@@ -1,7 +1,9 @@
 #!/usr/bin/php
 <?php
 
-require_once __DIR__ . '/../src/Serialized.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use App\Person;
 
 # Value
 $form_sel = 'json'; // json , yaml , xml , php
@@ -14,5 +16,3 @@ $array->setEmail('bornJ@mail.com');
 # Conclusion
 print_r($array);
 $array->funcSerialize($array);
-
-?>

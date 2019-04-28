@@ -9,10 +9,11 @@ use App\Person;
 $form_sel = 'json'; // json , yaml , xml , php
 
 # Assignment
-$array = new Person("$form_sel");
+$array = new Person($form_sel);
 $array->setName('john');
 $array->setEmail('bornJ@mail.com');
 
 # Conclusion
 print_r($array);
-$array->funcSerialize($array);
+$array->getSerialize ($array);
+

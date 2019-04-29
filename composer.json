@@ -1,0 +1,24 @@
+{
+    "name": "vogak/php-oop",
+    "type": "project",
+    "license": "propriarity",
+    "authors": [
+        {
+            "name": "vogak",
+            "email": "peregip@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/yaml": "^4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "cs-check": "php-cs-fixer fix --dry-run --ansi",
+        "serve": "php -S 0.0.0.0:8080"
+    }
+}

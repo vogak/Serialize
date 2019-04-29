@@ -1,6 +1,12 @@
 <?php
 
 namespace App;
+use App\lib\Form;
+use App\lib\json;
+use App\lib\yaml;
+use App\lib\xml;
+
+
 
 class Person
 {
@@ -25,28 +31,10 @@ class Person
         $this->email = $email;
     }
 
-    public function getSerialize ($single)
+    public function getSerialize ($array)
     {
-        $form_sel = $this->form_sel;
-        switch ( $form_sel )
-        {
-            case 'json':
-                return \print_r(json_encode($single) . \PHP_EOL);
-                break;
-
-            case 'yaml':
-                return \print_r(yaml_parse($single) . \PHP_EOL);
-                break;
-
-            case 'xml':
-                return \print_r(xml_parse($single) . \PHP_EOL);
-                break;
-
-            case 'php':
-                return \print_r(serialize($single) . \PHP_EOL);
-                break;
-        }
+        return $this->form_sel->getSerialize($array);
     }
 }
 
-?>
+

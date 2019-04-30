@@ -3,10 +3,12 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\Person;
+use Vendor\Person;
+use Vendor\lib\json;
+use Vendor\lib\yaml;
 
 # Value
-$form_sel = 'json'; // json , yaml , xml , php
+$form_sel = new json; // json , yaml , xml , php
 
 # Assignment
 $array = new Person($form_sel);
@@ -15,5 +17,5 @@ $array->setEmail('bornJ@mail.com');
 
 # Conclusion
 print_r($array);
-print_r( $array->getSerialize($array) . PHP_EOL);
+print_r( ($form_sel->getSerialize($array)) . PHP_EOL);
 

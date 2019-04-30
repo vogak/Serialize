@@ -1,14 +1,16 @@
 <?php
 
 
-namespace App\lib;
+namespace Vendor\lib;
 
+use Vendor\lib\SerializeForm;
 
-class yaml implements form
+final class yaml implements SerializeForm
 {
-    public function Serialize($array)
+    public function getSerialize($data)
     {
-        return \yaml_parse($array);
+        //TODO:: cache fails
+        return \yaml_parse($data);
     }
 
 }

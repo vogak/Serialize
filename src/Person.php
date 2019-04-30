@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
-use App\lib\Form;
-use App\lib\json;
-use App\lib\yaml;
-use App\lib\xml;
+namespace Vendor;
+use Vendor\lib\SerializeForm;
+use Vendor\lib\json;
+use Vendor\lib\yaml;
+use Vendor\lib\xml;
 
 
 
@@ -12,7 +12,7 @@ class Person
 {
     public $name;
     public $email;
-    private $form_sel;
+    public $form_sel;
 
     public function __construct($form_sel)
     {
@@ -31,9 +31,9 @@ class Person
         $this->email = $email;
     }
 
-    public function getSerialize ($array)
+    public function getSerialize ($data)
     {
-        return $this->form_sel->getSerialize($array);
+        return $data->getSerialize($this);
     }
 }
 

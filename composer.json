@@ -1,6 +1,7 @@
 {
-    "name": "vogak/php-oop",
-    "type": "project",
+    "name": "vogak/lib-serialize",
+    "description": "Library of serialize in format json, yaml, xml.",
+    "type": "library",
     "license": "propriarity",
     "authors": [
         {
@@ -10,15 +11,18 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "symfony/yaml": "^4.2"
+        "symfony/yaml": "^4.2",
+        "ext-json": "*",
+        "ext-xml": "*"
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Vendor\\": "src/"
         }
     },
     "scripts": {
-        "cs-check": "php-cs-fixer fix --dry-run --ansi",
+        "cs-fix": "php-cs-fixer fix --allow-risky=yes --diff --ansi",
         "serve": "php -S 0.0.0.0:8080"
     }
+
 }

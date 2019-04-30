@@ -25,11 +25,14 @@ $array->setEmail('bornJ@mail.com');
 ```
 Then you get this one
 ```bash
-App\Person Object
+Vendor\Person Object
 (
     [name] => john
     [email] => bornJ@mail.com
-    [form_sel:App\Person:private] => json
+    [form_sel] => Vendor\lib\json Object
+        (
+        )
+
 )
-{"name":"john","email":"bornJ@mail.com"}
+{"name":"john","email":"bornJ@mail.com","form_sel":{}}
 ```
